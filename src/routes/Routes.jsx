@@ -10,6 +10,7 @@ import Dashboard from "../Pages/Dashboard";
 import Blog from "../Pages/Blog";
 import Catagories from "../Pages/Catagories";
 import Contact from "../Pages/Contact";
+import PrivateRoute from "./private/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
             path:'/login',
             element:<Login/>
         },
+        {
+            path:'/registration',
+            element:<Registration/>
+        },
         
 
     ]
@@ -54,9 +59,11 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'',
-                element:(<Dashboard/>)
-                // note porbortite private route kore dashboard ke private router moddhe dite hobe
-        }
-    ]
-    }
-])
+                element:(<PrivateRoute>
+                    <Dashboard/>
+                </PrivateRoute>
+            ),    // note porbortite private route kore dashboard ke private router moddhe dite hobe
+        },
+    ],
+    },
+]);

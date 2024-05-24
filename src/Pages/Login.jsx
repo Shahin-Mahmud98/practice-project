@@ -1,20 +1,39 @@
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Components/home/Login-Registration/GoogleLogin";
+import useAuth from "../hooks/useAuth";
+import { useEffect } from "react";
 
 
-const handleSUbmit = (e) => {
-  e.preventDefault();
-
-const form = e.target;
-const email = form.email.value;
-const password = form.password.value;
-
-console.log(email,password)
-
-
-
-}
 
 const Login = () => {
+
+  const {signIn,user} = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+  const from = location?.state?.from?.pathname || "/";
+
+  const handleSUbmit = async (e) => {
+    e.preventDefault();
+  
+  const form = e.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  
+  console.log(email,password)
+  
+  await signIn(email,password);
+  
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
+  
+
     return (
       <form onSubmit={handleSUbmit} className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -63,14 +82,14 @@ const Login = () => {
             <div className="mt-6">
               <GoogleLogin />
             </div>
-            {/* <div className="mt-6">
+            <div className="mt-6">
               <p>
                 New here?{" "}
-                <Link to="/register" className="text-red-500">
+                <Link to="/registration" className="text-red-500">
                   Register
                 </Link>
               </p>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

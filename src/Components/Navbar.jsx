@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 
 const Navbar = () => {
+
+  const {logOut,user} = useAuth();
+
+
+
     return (
         
            <div className="navbar bg-base-100">
@@ -32,15 +38,42 @@ const Navbar = () => {
         </Link>
         </li>
         <li>
-        <Link to={'/dashboard'}>
-        Dashboard
-        </Link>
-        </li>
-        <li>
         <Link to={'/contact'}>
           Contact
           </Link>
         </li>
+        
+        { user && (
+          
+          <li>
+          <Link to={'/dashboard'}>
+          Dashboard
+          </Link>
+          </li>
+         
+        )}
+         
+        { !user &&(
+         <>
+          <button className="btn my-5">
+    <Link to={'/login'}>
+        Login
+      </Link> 
+    </button >
+        <li>
+        <Link to={'/registration'}>
+          Registration
+          </Link>
+        </li>
+        </> 
+        )}
+
+<button onClick={() => logOut()} className="btn mx-5">
+    <Link to={'/logout'}>
+        LogOut
+      </Link> 
+    </button>
+          
         
       </ul>
     </div>
@@ -77,15 +110,25 @@ const Navbar = () => {
           Contact
           </Link>
         </li>
+        
     </ul>
   </div>
   <div className="navbar-end">
-    <button className="btn">
+    {!user && (
+      <>
+      <button className="btn">
     <Link to={'/login'}>
         Login
       </Link> 
     </button>
-    <button className="btn mx-5">
+    <li>
+        <Link to={'/registration'}>
+          Registration
+          </Link>
+        </li>
+      </>
+    )}
+    <button onClick={()=>logOut()} className="btn mx-5">
     <Link to={'/logout'}>
         LogOut
       </Link> 
