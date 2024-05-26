@@ -11,6 +11,11 @@ import Blog from "../Pages/Blog";
 import Catagories from "../Pages/Catagories";
 import Contact from "../Pages/Contact";
 import PrivateRoute from "./private/PrivateRoute";
+import ProductsDetails from "../Pages/ProductsDetails";
+import AllProducts from "../Pages/AllProducts";
+import AddProducts from "../Pages/AddProducts";
+import EditProducts from "../Pages/EditProducts";
+// import ProductsDetails from "../Pages/ProductsDetails";
 
 export const router = createBrowserRouter([
     {
@@ -20,8 +25,16 @@ export const router = createBrowserRouter([
         children:[
             {
             path:'/',
-            element:<Home/>
+            element:<Home/>,
+            loader: () => fetch("http://localhost:3000/shoes"),
         },
+        {
+            path: "/products/:id",
+            element: <ProductsDetails />,
+            loader: ({ params }) =>
+              fetch(`http://localhost:3000/shoes/${params.id}`),
+          },
+          
             {
             path:'/about',
             element:<About/>
@@ -63,6 +76,28 @@ export const router = createBrowserRouter([
                     <Dashboard/>
                 </PrivateRoute>
             ),    // note porbortite private route kore dashboard ke private router moddhe dite hobe
+        },
+            {
+                path:'dashboard/all-products',
+                element:(<PrivateRoute>
+                    <AllProducts/>
+                </PrivateRoute>
+            ),    
+        },
+            {
+                path:'dashboard/add-products',
+                element:(<PrivateRoute>
+                    <AddProducts/>
+                </PrivateRoute>
+            ),    
+        },
+            {
+                path:'edit/:id',
+                element:(<PrivateRoute>
+                    <EditProducts/>
+                </PrivateRoute>
+            ),  
+            loader:({params}) => fetch(`http://localhost:3000/shoes/${params.id}`),
         },
     ],
     },

@@ -1,0 +1,44 @@
+{
+  "shoes": [
+    {
+      "id": "1",
+      "title": "Nike Air Zoom Pegasus 37",
+      "brand": "Nike",
+      "price": "123",
+      "description": "The Nike Air Zoom Pegasus 37 is a versatile running shoe with a responsive Zoom Air unit and React foam for a smooth, comfortable ride.",
+      "image_url": "https://img.freepik.com/free-psd/running-shoes-sneakers-transparent-background_84443-1666.jpg?w=740&t=st=1716679796~exp=1716680396~hmac=3b0f5a27d08bfb6e7d70364f636b981ccc78c7317082eb6a7386d852c8d6e68c"
+    },
+    {
+      "id": "2",
+      "title": "Adidas Ultraboost 21",
+      "brand": "Adidas",
+      "price": 180,
+      "description": "Adidas Ultraboost 21 delivers ultimate comfort and energy return with Boost technology and a supportive Primeknit upper.",
+      "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3809.jpg?t=st=1716679839~exp=1716683439~hmac=05707601a764c96dba8a498036aeaeee2f939af4290c9cfb568533d8e10b9acb&w=740"
+    },
+    {
+      "id": "3",
+      "title": "Brooks Ghost 13",
+      "brand": "Brooks",
+      "price": 130,
+      "description": "The Brooks Ghost 13 is a highly rated running shoe known for its soft, smooth ride and breathable mesh upper.",
+      "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3809.jpg?t=st=1716679839~exp=1716683439~hmac=05707601a764c96dba8a498036aeaeee2f939af4290c9cfb568533d8e10b9acb&w=740"
+    },
+    {
+      "id": "4",
+      "title": "New Balance Fresh Foam 1080v11",
+      "brand": "New Balance",
+      "price": "145",
+      "description": "Experience plush comfort with the New Balance Fresh Foam 1080v11, featuring Fresh Foam cushioning and a Hypoknit upper.",
+      "image_url": "https://img.freepik.com/free-psd/running-shoes-sneakers-transparent-background_84443-1666.jpg?w=740&t=st=1716679796~exp=1716680396~hmac=3b0f5a27d08bfb6e7d70364f636b981ccc78c7317082eb6a7386d852c8d6e68c"
+    },
+    {
+      "id": "5",
+      "title": "Asics Gel-Kayano 27",
+      "brand": "Asics",
+      "price": "170",
+      "description": "Asics Gel-Kayano 27 provides excellent stability and cushioning, ideal for overpronators seeking a reliable running shoe.",
+      "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3809.jpg?t=st=1716679839~exp=1716683439~hmac=05707601a764c96dba8a498036aeaeee2f939af4290c9cfb568533d8e10b9acb&w=740"
+    }
+  ]
+}
