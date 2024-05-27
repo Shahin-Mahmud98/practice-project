@@ -1,6 +1,7 @@
 const Accodian = () => {
     return (
         <div className="my-10">
+          <h1 className="text-5xl text-center font-bold my-5">FreeQuently Asked Question</h1>
            <div className=" collapse collapse-plus bg-base-200">
   <input type="radio" name="my-accordion-3" defaultChecked /> 
   <div className="collapse-title text-xl font-medium">

@@ -1,9 +1,19 @@
 
 import { useLoaderData } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
+  
+
 const EditProducts = () => {
     const shoe = useLoaderData();
     // console.log(shoe);
+
+    const editProduct = () =>{
+        toast ('Edit SuccessFully')
+    }
+    
 
     const addHandleSubmit = async (e) => {
         e.preventDefault();
@@ -94,12 +104,15 @@ const EditProducts = () => {
                         />
                     </div>
                     <div className="mt-2 flex justify-center items-center">
+                        <button  onClick={editProduct}>
                         <input
                             className="btn mt-4 w-full bg-red-500 text-white p-4"
                             type="submit"
                             value="Edit Product"
                         />
+                        </button>
                     </div>
+                    <ToastContainer/>
                 </form>
             </div>
         </div>

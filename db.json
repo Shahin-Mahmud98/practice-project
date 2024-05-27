@@ -39,6 +39,22 @@
       "price": "170",
       "description": "Asics Gel-Kayano 27 provides excellent stability and cushioning, ideal for overpronators seeking a reliable running shoe.",
       "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3809.jpg?t=st=1716679839~exp=1716683439~hmac=05707601a764c96dba8a498036aeaeee2f939af4290c9cfb568533d8e10b9acb&w=740"
+    },
+    {
+      "id": "6",
+      "title": "Sports",
+      "brand": "bata",
+      "price": "123",
+      "description": "New SPorts Shoes",
+      "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3802.jpg?t=st=1716707592~exp=1716711192~hmac=2bc788a798d4531d5b95de1a089112eab5902f28e4f7fb14516cdb3dffe34539&w=740"
+    },
+    {
+      "id": "7",
+      "title": "sports shoes",
+      "brand": "Lotto",
+      "price": "23",
+      "description": "New SPorts Shoes",
+      "image_url": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
   ]
 }

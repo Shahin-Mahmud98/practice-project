@@ -1,5 +1,16 @@
+/* eslint-disable no-undef */
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
+  
+
 const AddProducts = () => {
 
+    // Toastyfy
+    const handleAddProduct = () =>{
+        toast ('Add SuccessFully')
+    }
+    
 
     const addHandleSubmit = async (e) => {
         e.preventDefault();
@@ -15,7 +26,9 @@ const AddProducts = () => {
 
         // console.log(id)
         
-
+        // toastify
+        // eslint-disable-next-line no-unused-vars
+        
 
         const data = {id, title, brand, price, description, image_url};
         // console.log(data);
@@ -67,13 +80,18 @@ const AddProducts = () => {
             </div>
             
             <div className="mt-2 flex justify-center items-center">
-            <input
+            
+            <button onClick={handleAddProduct}>
+            <input 
               className="btn mt-4 w-full bg-red-500 text-white p-4"
               type="submit"
               value="Add product"
             />
+            </button>
           </div>
+          <ToastContainer theme='colored'/>
             </form>
+            
             </div>
         </div>
         

@@ -1,9 +1,24 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+// import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 // eslint-disable-next-line react/prop-types, no-unused-vars
 const SingleProductCardDashboard = ({shoe,onDelete}) => {
+
+  // const navigate = useNavigate();
+// Alret
+
+// alert
+
+  // const deleteProduct = () => {
+  //   toast('Delete SuccessFully')
+  // }
+
     const {id,title,brand,price,description,image_url} = shoe;
+
+    
 
     const handleDelete = async () => {
       await fetch(`http://localhost:3000/shoes/${id}`,{
@@ -13,9 +28,17 @@ const SingleProductCardDashboard = ({shoe,onDelete}) => {
         .then((data)=>{
             console.log(data);
             onDelete(id);
+            
 
         });
     };
+
+    // useEffect(() => {
+    //   if (shoe,onDelete) {
+    //     navigate(from, { replace: true });
+    //   }
+    // }, [shoe,onDelete, navigate]);
+    
 
     return (
         
@@ -33,11 +56,12 @@ const SingleProductCardDashboard = ({shoe,onDelete}) => {
        <button className="btn bg-green-600 text-white">
             <Link to={`/dashboard/edit/${id}`}>Edit</Link>
           </button>
-      <button onClick={handleDelete} className="btn bg-red-500 text-white">
+      <button  onClick={handleDelete} className="btn bg-red-500 text-white">
       Delete
        </button>
     </div>
   </div>
+  {/* <ToastContainer/> */}
 </div>
        
     );
