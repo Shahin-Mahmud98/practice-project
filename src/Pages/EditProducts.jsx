@@ -1,4 +1,5 @@
 
+
 import { useLoaderData } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,8 +10,10 @@ import { ToastContainer, toast } from 'react-toastify';
 const EditProducts = () => {
     const shoe = useLoaderData();
     // console.log(shoe);
+    // const [clicked, setClicked] = useState(false); 
 
     const editProduct = () =>{
+        // setClicked(true); 
         toast ('Edit SuccessFully')
     }
     
@@ -111,6 +114,7 @@ const EditProducts = () => {
                             value="Edit Product"
                         />
                         </button>
+                        
                     </div>
                     <ToastContainer/>
                 </form>
