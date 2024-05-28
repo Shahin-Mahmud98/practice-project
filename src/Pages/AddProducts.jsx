@@ -8,7 +8,7 @@ const AddProducts = () => {
 
     // Toastyfy
     const handleAddProduct = () =>{
-        toast ('Add SuccessFully')
+        toast ('Added SuccessFully')
     }
     
 
@@ -44,7 +44,9 @@ const AddProducts = () => {
         .then((data)=>{
             console.log(data);
             form.reset();
-          });
+            handleAddProduct(); 
+          })
+          
     }
 
 

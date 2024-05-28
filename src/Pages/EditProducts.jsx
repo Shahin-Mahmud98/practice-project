@@ -116,7 +116,7 @@ const EditProducts = () => {
                         </button>
                         
                     </div>
-                    <ToastContainer/>
+                    <ToastContainer theme='colored'/>
                 </form>
             </div>
         </div>

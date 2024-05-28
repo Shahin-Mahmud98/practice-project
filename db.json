@@ -41,10 +41,18 @@
       "image_url": "https://img.freepik.com/free-photo/pair-trainers_144627-3809.jpg?t=st=1716679839~exp=1716683439~hmac=05707601a764c96dba8a498036aeaeee2f939af4290c9cfb568533d8e10b9acb&w=740"
     },
     {
-      "id": "7",
-      "title": "Sports ",
+      "id": "6",
+      "title": "sports",
+      "brand": "bata",
+      "price": "123",
+      "description": "new sports shoe",
+      "image_url": "https://img.freepik.com/free-photo/close-up-basketball-shoes_23-2150847280.jpg?t=st=1716713126~exp=1716716726~hmac=7e95234fd2a5c67484a59eceb0ed1c3b0074b77157e66f3eb6ebce36b8ba436e&w=900"
+    },
+    {
+      "id": "9",
+      "title": "sports",
       "brand": "Lotto",
-      "price": "122",
+      "price": "333",
       "description": "New SPorts Shoes",
       "image_url": "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
