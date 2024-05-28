@@ -1,8 +1,9 @@
 const Catagories = () => {
     return (
         <>
-        <div className="stats shadow mx-5 my-10 ">
-  
+        <h1 className="my-8 text-5xl font-bold text-center ">Our Brand</h1>
+        <div className=" stats shadow mx-5 my-10 ">
+        
   <div className="stat ">
     <div className="stat-figure text-secondary ">
       <img className="h-60" src="https://www.logo.wine/a/logo/Adidas/Adidas-Logo.wine.svg" alt="" />
