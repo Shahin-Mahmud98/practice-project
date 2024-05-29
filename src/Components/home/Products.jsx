@@ -7,7 +7,7 @@ const Products = ({data}) => {
     return (
         <div >
             <div className="my-8 text-5xl font-bold text-center">Our Products</div>
-            <div className=" gap-2 px-20 w-full h-full p-4 justify-center items-center flex flex-wrap ">
+            <div className=" my-12 flex flex-wrap gap-6 p-4 px-20 justify-center ">
            {
             // eslint-disable-next-line react/prop-types
             data.map((shoe)=><SingleProducts key={shoe.id} shoe={shoe}/>
@@ -19,3 +19,4 @@ const Products = ({data}) => {
 };
 
 export default Products;
+
