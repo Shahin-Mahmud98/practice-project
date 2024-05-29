@@ -1,6 +1,6 @@
 
 
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
@@ -9,13 +9,14 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const EditProducts = () => {
     const shoe = useLoaderData();
+    const navigate = useNavigate();
     // console.log(shoe);
     // const [clicked, setClicked] = useState(false); 
 
-    const editProduct = () =>{
-        // setClicked(true); 
-        toast ('Edit SuccessFully')
-    }
+    // const editProduct = () =>{
+    //     // setClicked(true); 
+    //     toast ('Edit SuccessFully')
+    // }
     
 
     const addHandleSubmit = async (e) => {
@@ -32,19 +33,52 @@ const EditProducts = () => {
         const data = { id, title, brand, price, description, image_url };
         // console.log(data);
 
-       await fetch(`http://localhost:3000/shoes/${shoe.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            form.reset();
-        });
-    };
+        if (confirm('Are you sure? Edited the Product')){
+            try{
+                const response = await fetch(`http://localhost:3000/shoes/${shoe.id}`,{
+                    method: 'PATCH',
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    toast ('Edit SuccessFully')
+                    console.log(data);
+                    form.reset();
+                });
+                
+            
+            if (response.ok) {
+                // onDelete(id);
+                toast.success('Edited successfully');
+                navigate('/dashboard', { replace: true }); // Navigate to a different route after deletion
+              } else {
+                toast.error('Edit failed');
+              }
+            } catch (error) {
+              console.error('Error editing the product:', error);
+              toast.error('Edit failed');
+            }
+          }
+        };
+        
+    //    await fetch(`http://localhost:3000/shoes/${shoe.id}`, {
+        
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Content-type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data),
+    //     })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         toast ('Edit SuccessFully')
+    //         console.log(data);
+    //         form.reset();
+    //     });
+    // };
 
     return (
         <div>
@@ -107,7 +141,7 @@ const EditProducts = () => {
                         />
                     </div>
                     <div className="mt-2 flex justify-center items-center">
-                        <button  onClick={editProduct}>
+                        <button  >
                         <input
                             className="btn mt-4 w-full bg-red-500 text-white p-4"
                             type="submit"

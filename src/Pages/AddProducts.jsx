@@ -1,10 +1,12 @@
 /* eslint-disable no-undef */
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
   
 
 const AddProducts = () => {
+    const navigate = useNavigate();
 
     // Toastyfy
     const handleAddProduct = () =>{
@@ -13,6 +15,7 @@ const AddProducts = () => {
     
 
     const addHandleSubmit = async (e) => {
+        
         e.preventDefault();
 
 
@@ -32,23 +35,33 @@ const AddProducts = () => {
 
         const data = {id, title, brand, price, description, image_url};
         // console.log(data);
-
-        await fetch('http://localhost:3000/shoes',{
-            method:'POST',
-            headers:{
-                'Content-type':'application/json',
-            },
-            body:JSON.stringify(data),
-        })
-        .then((res) => res.json())
-        .then((data)=>{
-            console.log(data);
-            form.reset();
-            handleAddProduct(); 
-          })
-          
-    }
-
+        if (confirm('Are you sure? Added New Product')) {
+            try{const response = await fetch('http://localhost:3000/shoes',{
+                method:'POST',
+                headers:{
+                    'Content-type':'application/json',
+                },
+                body:JSON.stringify(data),
+            })
+            .then((res) => res.json())
+            .then((data)=>{
+                console.log(data);
+                form.reset();
+                handleAddProduct(); 
+              })
+              if (response.ok) {
+                // onDelete(id);
+                toast.success('Added successfully');
+                navigate('/dashboard', { replace: true }); // Navigate to a different route after deletion
+              } else {
+                toast.error('Added failed');
+              }
+            } catch (error) {
+              console.error('Error added the product:', error);
+              toast.error('Added failed');
+            }
+          }
+        };
 
     return (
         <div>
@@ -83,7 +96,7 @@ const AddProducts = () => {
             
             <div className="mt-2 flex justify-center items-center">
             
-            <button onClick={handleAddProduct}>
+            <button >
             <input 
               className="btn mt-4 w-full bg-red-500 text-white p-4"
               type="submit"
